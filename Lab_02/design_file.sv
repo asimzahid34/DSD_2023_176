@@ -28,7 +28,9 @@ module design_file(
     output y
     );
     assign or_o = a|b;
-    assign x = ~(c) ^ or_o;
-    assign xor_o = ~(a&b) ^ or_o;
+    assign not_o = ~c;
+    assign x = not_o ^ or_o;
+    assign nand_o = ~(a&b);
+    assign xor_o = nand_o ^ or_o;
     assign y = or_o & xor_o;
 endmodule
